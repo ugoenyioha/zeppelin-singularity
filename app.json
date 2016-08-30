@@ -1,13 +1,11 @@
 {
-  "name": "zeppelin-in-space",
-  "description": "zeppelin based spark and postgres notebooks in a private space",
+  "name": "zeppelin-singularity",
+  "description": "Single-node deployment of Apache Zeppelin notebooks for Apache Spark and PostgreSQL.",
   "keywords": [
     "spark",
-    "zeppelin",
-    "private-spaces",
-    "dns-discovery"
+    "zeppelin"
   ],
-  "repository": "https://github.com/heroku/zeppelin-in-space",
+  "repository": "https://github.com/heroku/zeppelin-singularity",
   "env": {
     "ZEPPELIN_BASIC_AUTH": {
       "description": "nginx basic auth",
@@ -17,26 +15,11 @@
       "description": "log4j log level for spark",
       "value":  "INFO"
     },
-    "SPARK_INTERPRETER_APPS": {
-      "description": "comma seperated list of spark-in-space clusters you want to notebook ok",
-      "required": false
-    },
     "DATABASE_INTERPRETER_URLS": {
       "description": "comma seperated list of database url config var names (DATABASE_URL,OTHER_URL)",
       "required": false
     }
   },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "Private-S"
-    },
-    "zeppelin": {
-      "quantity": 1,
-      "size": "Private-L"
-    }
-  },
-  "image": "heroku/jvm",
   "addons": [
     {
       "plan": "bucketeer",
@@ -52,6 +35,12 @@
     },
     {
       "url": "https://github.com/heroku/heroku-buildpack-jvm-common.git"
+    },
+    {
+      "url": "https://github.com/dpiddy/heroku-buildpack-runit.git"
+    },
+    {
+      "url": "https://github.com/heroku/spark-singularity.git"
     },
     {
       "url": "https://github.com/kr/heroku-buildpack-inline.git"
