@@ -7,8 +7,12 @@
   ],
   "repository": "https://github.com/heroku/zeppelin-singularity",
   "env": {
+    "ZEPPELIN_ADMIN_PASSWORD": {
+      "description": "Password for 'admin' user access.",
+      "value": "hydrogenisflammable"
+    },
     "ZEPPELIN_BASIC_AUTH": {
-      "description": "nginx basic auth",
+      "description": "Access to the Spark web endpoints: /spark, /worker, /rest, etc. (This value is an Nginx basic auth entry)",
       "value": "zeppelin:{PLAIN}space"
     },
     "LOG_LEVEL": {
