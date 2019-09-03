@@ -64,6 +64,9 @@
       "url": "https://github.com/dpiddy/heroku-buildpack-runit.git"
     },
     {
+      "url": "https://github.com/heroku/spark-singularity.git"
+    },
+    {
       "url": "https://github.com/kr/heroku-buildpack-inline.git"
     }
   ]
